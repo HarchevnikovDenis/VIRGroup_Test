@@ -23,6 +23,10 @@ public class InputManager : MonoBehaviour
     }
     private void FixedUpdate() 
     {
+        if (!isGrounded)
+            if (isGround())
+                Landing();
+
         if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -35,7 +39,7 @@ public class InputManager : MonoBehaviour
                 return;
 
             //Пользователь зажал
-            if (jumpCount >= 2)
+            if (jumpCount == 2)
             {
                 Holding(touch);
             }
@@ -76,25 +80,27 @@ public class InputManager : MonoBehaviour
         if (timer > 1.0f && rb.velocity.y < 1.0f)
         {
             Physics.gravity = new Vector3(0.0f, -1.0f, 0.0f);
+            rb.velocity = new Vector3(0.0f, -1.0f, 0.0f);
         }
 
         if (touch.phase == TouchPhase.Ended)
         {
             Physics.gravity = new Vector3(0.0f, -9.81f, 0.0f);
-            //timer = 0.0f;
-            //jumpCount++;
-            //return;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private bool isGround()
     {
-        if(collision.gameObject.CompareTag("Ground"))
-        {
-            Physics.gravity = new Vector3(0.0f, -9.81f, 0.0f);
-            isGrounded = true;
-            jumpCount = 0;
-            timer = 0.0f;
-        }
+        if (transform.position.y < -3.05f && rb.velocity.y < 0.0f)
+            return true;
+        return false;
+    }
+
+    private void Landing()
+    {
+        Physics.gravity = new Vector3(0.0f, -9.81f, 0.0f);
+        isGrounded = true;
+        jumpCount = 0;
+        timer = 0.0f;
     }
 }

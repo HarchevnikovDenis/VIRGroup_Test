@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Lava
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -61,7 +61,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -73,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.23248819, g: 0.90588236, b: 0.13333334, a: 1}
-    - _EmissionColor: {r: 0.09803922, g: 0.7490196, b: 0.043137256, a: 1}
+    - _Color: {r: 0.8679245, g: 0.5472525, b: 0.118725546, a: 1}
+    - _EmissionColor: {r: 1.30001, g: 0.28291777, b: 0.07971763, a: 1}
