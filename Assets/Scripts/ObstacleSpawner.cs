@@ -31,9 +31,9 @@ public class ObstacleSpawner : MonoBehaviour
     {
         GameObject obstacle = Instantiate(nextObstacle, transform.position, Quaternion.identity);
         if (obstacle.CompareTag("Lava"))
-            neededTime = 6.0f;
+            neededTime = 10.0f;
         else
-            neededTime = 3.5f;
+            neededTime = 5.0f;
 
         nextObstacle = null;
     }

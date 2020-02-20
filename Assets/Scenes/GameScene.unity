@@ -588,7 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraAnimator: {fileID: 963194229}
   losePanel: {fileID: 2107439280}
-  range: 0.54
+  range: 0.51
 --- !u!1 &296530445
 GameObject:
   m_ObjectHideFlags: 0
